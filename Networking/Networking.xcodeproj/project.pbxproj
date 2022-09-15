@@ -13,6 +13,11 @@
 		B74C18E528C9D78500E3C5DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74C18E328C9D78500E3C5DA /* Main.storyboard */; };
 		B74C18E728C9D78500E3C5DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74C18E628C9D78500E3C5DA /* Assets.xcassets */; };
 		B74C18EA28C9D78500E3C5DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74C18E828C9D78500E3C5DA /* LaunchScreen.storyboard */; };
+		B74C18F228CA7C4B00E3C5DA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74C18F128CA7C4B00E3C5DA /* Post.swift */; };
+		B74C18F428CB708900E3C5DA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74C18F328CB708900E3C5DA /* NetworkManager.swift */; };
+		B74C18F628CF22F000E3C5DA /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74C18F528CF22F000E3C5DA /* Comments.swift */; };
+		B74C18FA28D05CF800E3C5DA /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74C18F828D05CF800E3C5DA /* PostTableViewCell.swift */; };
+		B74C18FB28D05CF800E3C5DA /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74C18F928D05CF800E3C5DA /* PostTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		B74C18E628C9D78500E3C5DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B74C18E928C9D78500E3C5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B74C18EB28C9D78500E3C5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B74C18F128CA7C4B00E3C5DA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B74C18F328CB708900E3C5DA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B74C18F528CF22F000E3C5DA /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		B74C18F828D05CF800E3C5DA /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		B74C18F928D05CF800E3C5DA /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +69,25 @@
 				B74C18DD28C9D78500E3C5DA /* AppDelegate.swift */,
 				B74C18DF28C9D78500E3C5DA /* SceneDelegate.swift */,
 				B74C18E128C9D78500E3C5DA /* ViewController.swift */,
+				B74C18F828D05CF800E3C5DA /* PostTableViewCell.swift */,
+				B74C18F928D05CF800E3C5DA /* PostTableViewCell.xib */,
+				B74C18F728D05CBE00E3C5DA /* Model */,
+				B74C18F328CB708900E3C5DA /* NetworkManager.swift */,
 				B74C18E328C9D78500E3C5DA /* Main.storyboard */,
 				B74C18E628C9D78500E3C5DA /* Assets.xcassets */,
 				B74C18E828C9D78500E3C5DA /* LaunchScreen.storyboard */,
 				B74C18EB28C9D78500E3C5DA /* Info.plist */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		B74C18F728D05CBE00E3C5DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B74C18F528CF22F000E3C5DA /* Comments.swift */,
+				B74C18F128CA7C4B00E3C5DA /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74C18EA28C9D78500E3C5DA /* LaunchScreen.storyboard in Resources */,
+				B74C18FB28D05CF800E3C5DA /* PostTableViewCell.xib in Resources */,
 				B74C18E728C9D78500E3C5DA /* Assets.xcassets in Resources */,
 				B74C18E528C9D78500E3C5DA /* Main.storyboard in Resources */,
 			);
@@ -138,9 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74C18FA28D05CF800E3C5DA /* PostTableViewCell.swift in Sources */,
 				B74C18E228C9D78500E3C5DA /* ViewController.swift in Sources */,
+				B74C18F228CA7C4B00E3C5DA /* Post.swift in Sources */,
+				B74C18F428CB708900E3C5DA /* NetworkManager.swift in Sources */,
 				B74C18DE28C9D78500E3C5DA /* AppDelegate.swift in Sources */,
 				B74C18E028C9D78500E3C5DA /* SceneDelegate.swift in Sources */,
+				B74C18F628CF22F000E3C5DA /* Comments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
