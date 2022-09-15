@@ -33,7 +33,7 @@ class NetworkManager {
         }
     }
     
-    func postCreatePost(_ post: Post, complitionHandler: () -> Void) {
+    func postCreatePost(_ post: Post, complitionHandler: @escaping () -> Void) {
         guard let url = URL(string: baseURL + APIs.posts.rawValue), let data = try? JSONEncoder().encode(post) else { return }
         
         var request = URLRequest(url: url)
@@ -41,5 +41,17 @@ class NetworkManager {
         request.httpBody = data
         request.setValue("\(data.count)", forHTTPHeaderField: "Content-Length")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if error != nil {
+                print("error")
+            } else if let resp = response as? HTTPURLResponse, resp.statusCode == 201, let responseData = data {
+                
+                let json = try? JSONSerialization.jsonObject(with: responseData)
+                print(json)
+                complitionHandler()
+            }
+        }.resume()
     }
 }

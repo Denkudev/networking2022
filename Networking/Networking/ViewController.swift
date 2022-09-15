@@ -34,6 +34,20 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func createPostDidTap(_ sender: UIButton) {
+        
+        let post = Post(userId: 1, title: "myTtitle", body: "myBuddy")
+        networkManager.postCreatePost(post) {
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Great!", message: "Your post has been created.", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    alert.dismiss(animated: true)
+                }
+            }
+        }
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
