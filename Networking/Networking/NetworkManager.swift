@@ -33,7 +33,7 @@ class NetworkManager {
         }
     }
     
-    func postCreatePost(_ post: Post, complitionHandler: @escaping () -> Void) {
+    func postCreatePost(_ post: Post, complitionHandler: @escaping (Post) -> Void) {
         guard let url = URL(string: baseURL + APIs.posts.rawValue), let data = try? JSONEncoder().encode(post) else { return }
         
         var request = URLRequest(url: url)
@@ -48,9 +48,9 @@ class NetworkManager {
                 print("error")
             } else if let resp = response as? HTTPURLResponse, resp.statusCode == 201, let responseData = data {
                 
-                let json = try? JSONSerialization.jsonObject(with: responseData)
-                print(json)
-                complitionHandler()
+                if let responsePost = try? JSONDecoder().decode(Post.self, from: responseData) {
+                    complitionHandler(responsePost)
+                }
             }
         }.resume()
     }

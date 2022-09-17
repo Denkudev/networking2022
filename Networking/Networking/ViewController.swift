@@ -38,7 +38,8 @@ class ViewController: UIViewController {
     @IBAction func createPostDidTap(_ sender: UIButton) {
         
         let post = Post(userId: 1, title: "myTtitle", body: "myBuddy")
-        networkManager.postCreatePost(post) {
+        networkManager.postCreatePost(post) { serverPost in
+            post.id = serverPost.id
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: "Great!", message: "Your post has been created.", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
