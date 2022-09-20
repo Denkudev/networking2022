@@ -26,11 +26,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func downloadPostsDidTap(_ sender: UIButton) {
-        networkManager.getAllPosts { [weak self] (posts) in
-            
+//        networkManager.getAllPosts { [weak self] (posts) in
+//
+//            DispatchQueue.main.async {
+//                self?.myPosts = posts
+//                self?.downloadPostsLabel.text = "Posts has been downloaded!"
+//            }
+//        }
+        networkManager.getPostsBy(userId: 3) { [weak self] (posts) in
             DispatchQueue.main.async {
                 self?.myPosts = posts
-                self?.downloadPostsLabel.text = "Posts has been downloaded!"
+                self?.downloadPostsLabel.text = "Posts for user with id: \(posts[0].userId) downloaded."
             }
         }
     }

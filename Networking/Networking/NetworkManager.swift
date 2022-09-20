@@ -70,6 +70,6 @@ class NetworkManager {
                 
                 complitionHandler(posts ?? [])
             }
-        }
+        }.resume()
     }
 }
